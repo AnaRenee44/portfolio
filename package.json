@@ -1,0 +1,31 @@
+{
+  "name": "anarenee-portfolio",
+  "version": "1.0.0",
+  "description": "A portfolio of my development journey",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -w",
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnaRenee44/portfolio.git"
+  },
+  "author": "Anastasia Bennett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnaRenee44/portfolio/issues"
+  },
+  "homepage": "https://github.com/AnaRenee44/portfolio#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.32",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  }
+}
