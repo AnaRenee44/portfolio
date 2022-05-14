@@ -9,8 +9,9 @@ const DIST_DIR = path.resolve(__dirname, "dist");
 app.use("/", express.static(DIST_DIR));
 
 app.get("/", (req: Request, res: Response) => {
-  res.sendFile(path.resolve(DIST_DIR, "index.html"));
+  res.sendFile(__dirname + "/index.html");
 });
+// path.resolve(DIST_DIR, "index.html")
 
 app.listen(PORT, () => {
   console.log(`Listening on port http://localhost:${PORT}`);
