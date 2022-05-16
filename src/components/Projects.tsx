@@ -14,7 +14,7 @@ const Projects: React.FC = () => {
       alignItems="center"
       direction="column"
     >
-      <Flex paddingTop="20px">
+      <Flex paddingTop="30px">
         <Text as="u" fontSize="4xl">
           Projects
         </Text>
