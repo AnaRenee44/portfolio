@@ -1,7 +1,8 @@
 import React from "react";
+import { Container } from "@chakra-ui/react";
 
 const Home: React.FC = () => {
-  return <div>Ze Home Page</div>;
+  return <Container>1st Home</Container>;
 };
 
 export default Home;

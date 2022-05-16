@@ -4,15 +4,18 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import { Container } from "@chakra-ui/react";
 
 const App: React.FC = () => {
   return (
     <div>
       <NavBar />
-      <Home />
-      <About />
-      <Projects />
-      <Contact />
+      <Container paddingTop="65">
+        <Home />
+        <About />
+        <Projects />
+        <Contact />
+      </Container>
     </div>
   );
 };
