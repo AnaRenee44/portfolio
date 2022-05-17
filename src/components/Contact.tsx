@@ -7,6 +7,7 @@ import { VStack } from "@chakra-ui/react";
 const Contact: React.FC = () => {
   return (
     <Flex
+      id="contact-me"
       minW="100%"
       h="625"
       backgroundColor="pink.100"

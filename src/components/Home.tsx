@@ -5,6 +5,7 @@ import { Text } from "@chakra-ui/react";
 const Home: React.FC = () => {
   return (
     <Flex
+      id="home"
       minW="100%"
       h="625"
       backgroundColor="blue.100"

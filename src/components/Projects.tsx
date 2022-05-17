@@ -6,6 +6,7 @@ import { Container } from "@chakra-ui/react";
 const Projects: React.FC = () => {
   return (
     <Flex
+      id="projects"
       minW="100%"
       h="625"
       backgroundColor="orange.200"

@@ -10,6 +10,7 @@ import { Box } from "@chakra-ui/react";
 const About: React.FC = () => {
   return (
     <Flex
+      id="about-me"
       minW="100%"
       h="625"
       backgroundColor="yellow.100"

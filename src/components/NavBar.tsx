@@ -6,6 +6,13 @@ import { HStack } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 
 const NavBar: React.FC = () => {
+  const scrollTo = (id: string) => {
+    const anchor: Element | null = document.querySelector(id);
+    if (anchor !== null) {
+      anchor.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
   return (
     <Flex
       as="header"
@@ -18,24 +25,64 @@ const NavBar: React.FC = () => {
       paddingRight="15"
       alignItems="center"
     >
-      <Text fontSize="2xl">Anastasia</Text>
+      <div
+        style={{ cursor: "pointer" }}
+        onClick={() => {
+          scrollTo("#home");
+        }}
+      >
+        <Text fontSize="2xl">Anastasia</Text>
+      </div>
       <Spacer />
       <HStack>
-        <Text fontSize="2xl">About</Text>
+        <div
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            scrollTo("#about-me");
+          }}
+        >
+          <Text fontSize="2xl">About</Text>
+        </div>
         <Spacer />
-        <Text fontSize="2xl">Projects</Text>
+        <div
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            scrollTo("#projects");
+          }}
+        >
+          <Text fontSize="2xl">Projects</Text>
+        </div>
         <Spacer />
-        <Text fontSize="2xl">Connect</Text>
+        <div
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            scrollTo("#contact-me");
+          }}
+        >
+          <Text fontSize="2xl">Connect</Text>
+        </div>
         <Spacer />
-        <Image
-          src="https://img.icons8.com/material/48/000000/linkedin--v1.png"
-          alt="LinkedIn"
-        />
+        <a
+          href="https://www.linkedin.com/in/anastasia-bennett/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image
+            src="https://img.icons8.com/material/48/000000/linkedin--v1.png"
+            alt="LinkedIn"
+          />
+        </a>
         <Spacer />
-        <Image
-          src="https://img.icons8.com/material/48/000000/github.png"
-          alt="Github"
-        />
+        <a
+          href="https://github.com/AnaRenee44"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image
+            src="https://img.icons8.com/material/48/000000/github.png"
+            alt="Github"
+          />
+        </a>
       </HStack>
     </Flex>
   );
