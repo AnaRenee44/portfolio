@@ -1,10 +1,56 @@
 import React from "react";
+import axios from "axios";
 import { Flex } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
 import { Container } from "@chakra-ui/react";
 import { VStack } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
+
+interface Message {
+  message: {
+    subject: string;
+    body: {
+      contentType: string;
+      content: string;
+    };
+    toRecipients: [
+      {
+        emailAddress: {
+          address: string;
+        };
+      }
+    ];
+  };
+}
 
 const Contact: React.FC = () => {
+  const sampleMessage: Message = {
+    message: {
+      subject: "Portfolio Inquiry",
+      body: {
+        contentType: "Text",
+        content: "Hey there!",
+      },
+      toRecipients: [
+        {
+          emailAddress: {
+            address: "email@gmail.com",
+          },
+        },
+      ],
+    },
+  };
+
+  const sendEmail = () => {
+    axios
+      .post<Message>("/api/outlook/sendMail", {
+        message: "the message",
+        test: "test and message are part of the request body",
+      })
+      .then((response) => console.log("Email successful: ", response))
+      .catch((err) => console.error("Email failed: ", err));
+  };
+
   return (
     <Flex
       id="contact-me"
@@ -37,16 +83,19 @@ const Contact: React.FC = () => {
               Just say hi?
             </Text>
           </Container>
-          <Container
+          {/* <Container
             bgColor="pink.100"
             borderRadius="5"
             h="50"
             w="200px"
             centerContent
-          >
+          > */}
+          <Button onClick={sendEmail}>
             <Text fontSize="2xl">Email Me</Text>
             <Text fontSize="md ">Connect email api</Text>
-          </Container>
+          </Button>
+
+          {/* </Container> */}
         </VStack>
       </Container>
       <Container
